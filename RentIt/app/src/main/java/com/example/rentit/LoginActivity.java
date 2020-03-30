@@ -51,14 +51,23 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void validation(String USERNAME, String PASSWORD){
-        if ((USERNAME.equals("Gaman")) && (PASSWORD.equals("gaman12345"))){
+    private void validation(String USERNAME, String PASSWORD) {
+        if ((USERNAME.isEmpty())&&(PASSWORD.isEmpty())){
+            ErrorMessage.setText("Please insert USERNAME and PASSWORD");
+            HelpInPassword.setText(" ");
+        }else if (USERNAME.isEmpty()) {
+            ErrorMessage.setText("Please insert USERNAME");
+            HelpInPassword.setText(" ");
+        }else if (PASSWORD.isEmpty()){
+            ErrorMessage.setText("Please insert PASSWORD");
+            HelpInPassword.setText(" ");
+        }else if ((USERNAME.equals("Gaman")) && (PASSWORD.equals("gaman12345"))){
             Intent FromLoginToHome = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(FromLoginToHome);
         }else{
             ErrorMessage.setText("Invalid Username or Password");
             HelpInPassword.setText("Forget Password?");
         }
-
     }
+
 }
