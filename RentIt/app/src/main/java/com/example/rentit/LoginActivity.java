@@ -11,14 +11,11 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText username;
-    private EditText password;
-    private TextView HelpInPassword;
-    private Button Login;
-    private TextView ErrorMessage;
+    private EditText username, password;
+    private TextView HelpInPassword, ErrorMessage;
     private Button NoAccount;
 
-    Databasehelper Database;
+//    Databasehelper Database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,26 +29,22 @@ public class LoginActivity extends AppCompatActivity {
         HelpInPassword = (TextView)findViewById(R.id.forgetpassword);
         ErrorMessage = (TextView)findViewById(R.id.errormessage);
 
-        Login = (Button)findViewById(R.id.login);
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validation(username.getText().toString() ,password.getText().toString());
-            }
-        });
-
         NoAccount = (Button)findViewById(R.id.noaccount);
         NoAccount.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View register) {
                 Intent FromLoginToSignin = new Intent(LoginActivity.this, RegistrationActivity.class);
                 startActivity(FromLoginToSignin);
             }
         });
-
     }
 
-    private void validation(String USERNAME, String PASSWORD) {
+
+    public void validation(View view) {
+
+        String USERNAME = username.getText().toString();
+        String PASSWORD = password.getText().toString();
+
         if ((USERNAME.isEmpty())&&(PASSWORD.isEmpty())){
             ErrorMessage.setText("Please insert USERNAME and PASSWORD");
             HelpInPassword.setText(" ");
@@ -61,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         }else if (PASSWORD.isEmpty()){
             ErrorMessage.setText("Please insert PASSWORD");
             HelpInPassword.setText(" ");
-        }else if ((USERNAME.equals("Gaman")) && (PASSWORD.equals("gaman12345"))){
+        }else if ((USERNAME.equals("Gaman")) && (PASSWORD.equals("g12"))){
             Intent FromLoginToHome = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(FromLoginToHome);
         }else{
@@ -69,5 +62,4 @@ public class LoginActivity extends AppCompatActivity {
             HelpInPassword.setText("Forget Password?");
         }
     }
-
 }
