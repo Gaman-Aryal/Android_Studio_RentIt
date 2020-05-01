@@ -21,7 +21,7 @@
         android:textSize="25sp" />
 
     <TextView
-        android:id="@+id/genre_id"
+        android:id="@+id/location_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name_id"
@@ -29,5 +29,13 @@
         android:layout_toRightOf="@+id/image_id"
         android:text="Location"
         android:textSize="20sp" />
+    <Button
+        android:id="@+id/view_btn"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/location_id"
+        android:layout_toRightOf="@id/image_id"
+        android:layout_marginStart="69dp"
+        android:text="View Details"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>
