@@ -35,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View register) {
                 Intent FromLoginToSignin = new Intent(LoginActivity.this, RegistrationActivity.class);
                 startActivity(FromLoginToSignin);
+
+
             }
         });
     }
