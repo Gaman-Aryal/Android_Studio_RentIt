@@ -22,8 +22,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Database = new Databasehelper(this);
-
         username = (EditText) findViewById(R.id.email);
         password = (EditText)findViewById(R.id.password);
         HelpInPassword = (TextView)findViewById(R.id.forgetpassword);

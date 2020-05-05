@@ -12,7 +12,6 @@ public class Databasehelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME ="USERS.db";
     public static final String TABLE_NAME ="OWNERINFO";
-
     public static final String Field1 ="OWNER_ID";
     public static final String Field2 ="OWNER_NAME";
     public static final String Field3 ="OWNER_USERNAME";
